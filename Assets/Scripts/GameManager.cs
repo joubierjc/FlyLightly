@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	private float score;
 	public int multiplicator;
 
+	public float startingDecayingHealthMultiplicator = 1f;
 	public float DecayingHealthMultiplicator { get; set; }
 
 	[SerializeField] Text scoreText;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour {
 		if (Instance == null) {
 			Instance = this;
 		}
-		DecayingHealthMultiplicator = 1f;
+		DecayingHealthMultiplicator = startingDecayingHealthMultiplicator;
 
 	}
 
