@@ -5,7 +5,7 @@ using UnityEngine;
 public class OthersSpawn : MonoBehaviour {
 	
 	[SerializeField] GameObject otherPrefab;
-	[SerializeField] float spawnTime = 2f;
+	float spawnTime;
 	[SerializeField] float impulseForceOnSpawn = 5f;
 	
 	[SerializeField] Vector2 spawnLeft;
@@ -14,6 +14,7 @@ public class OthersSpawn : MonoBehaviour {
 
 	void Start()
 	{
+		spawnTime = GameManager.Instance.spawnTimeOther;
 		StartCoroutine(Spawn());
 	}
 

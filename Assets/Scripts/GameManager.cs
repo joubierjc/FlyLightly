@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	private float score;
 	public int multiplicator;
 
+	public float spawnTimeOther { get; set; }
+
 	public float DecayingHealthMultiplicator { get; set; }
 
 	[SerializeField] Text scoreText;
