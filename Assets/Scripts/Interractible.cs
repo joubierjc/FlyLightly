@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Interractible : MonoBehaviour {
+public abstract class Interractable : MonoBehaviour {
 
 	public abstract void Interract();
 
