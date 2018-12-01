@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour {
 
 	public ResourceType currentResource = ResourceType.None;
 
-	public float moveSpeed;
+	public float startingInterractCoolDown = 1f;
+	public float InterractCoolDown { get; set; }
+	public float startingMoveSpeed = 10f;
+	public float MoveSpeed { get; set; }
 	public Transform groundChecker;
 
 	private bool grounded;
@@ -18,9 +21,11 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rb2D;
 
 	public LayerMask groundLayer;
-	public float radius;
 
 	const float groundedRadius = 0.2f;
+	const float interractRadius = 0.5f;
+
+	private float nextInterract;
 
 	private void Awake() {
 		if (Instance == null) {
@@ -28,6 +33,23 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		rb2D = GetComponent<Rigidbody2D>();
+		InterractCoolDown = startingInterractCoolDown;
+		MoveSpeed = startingMoveSpeed;
+
+		nextInterract = Time.time + InterractCoolDown;
+	}
+
+	private void Update() {
+		if (nextInterract < Time.time && Input.GetButton("Fire1")) {
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interractRadius);
+			for (int i = 0; i < colliders.Length; i++) {
+				var interractable = colliders[i].GetComponent<Interractable>();
+				if (interractable != null) {
+					interractable.Interract();
+					nextInterract = Time.time + InterractCoolDown;
+				}
+			}
+		}
 	}
 
 	private void FixedUpdate() {
@@ -40,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 		bool wasGrounded = grounded;
 		grounded = false;
 
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChecker.position, radius, groundLayer);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChecker.position, groundedRadius, groundLayer);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject) {
@@ -53,7 +75,7 @@ public class PlayerController : MonoBehaviour {
 
 		// APPLY MOVEMENT
 		rb2D.velocity = new Vector2(
-			Mathf.Lerp(rb2D.velocity.x, horizontal * moveSpeed, 0.5f),
+			Mathf.Lerp(rb2D.velocity.x, horizontal * MoveSpeed, 0.5f),
 			vertical
 		);
 	}

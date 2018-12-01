@@ -8,7 +8,7 @@ public class OtherInterractable : Interractable
 
 	public override void Interract()
 	{
-		GetComponent<Collider>().enabled = false;
+		GetComponent<Collider2D>().enabled = false;
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0, impulseForce), ForceMode2D.Impulse);
 	}
 }
