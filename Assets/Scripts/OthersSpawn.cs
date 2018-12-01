@@ -17,39 +17,26 @@ public class OthersSpawn : MonoBehaviour {
 	IEnumerator Spawn()
 	{
 
-		SpawnZombie();
+		SpawnOther();
 		yield return new WaitForSeconds(spawnTime);
 
 		while (enabled)
 		{
 
-			int randSpawn = Random.Range(0, 10);
-
-			if (randSpawn <= 6)
-			{
-				SpawnZombie();
-			}
-			else if ((randSpawn == 10))
-			{
-				SpawnSideZombie();
-			}
-			else
-			{
-				SpawnMoreZombie();
-			}
-
+			int randSpawn = Random.Range(0, spawnPoints.Length);
+			
 			yield return new WaitForSeconds(spawnTime);
 		}
 
 		yield break;
 	}
 
-	private void SpawnZombie()
+	private void SpawnOther()
 	{
 		int spawnPointIndex;
 
 		spawnPointIndex = Random.Range(0, spawnPoints.Length);
-		GameObject enn = Instantiate(enemy, spawnPoints[spawnPointIndex]);
+		GameObject enn = Instantiate(otherPrefab, spawnPoints[spawnPointIndex]);
 		enemies.Add(enn);
 	}
 }
