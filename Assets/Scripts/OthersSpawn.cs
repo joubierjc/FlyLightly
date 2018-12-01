@@ -6,8 +6,11 @@ public class OthersSpawn : MonoBehaviour {
 	
 	[SerializeField] GameObject otherPrefab;
 	[SerializeField] float spawnTime = 2f;
+	[SerializeField] float impulseForceOnSpawn = 5f;
+	
+	[SerializeField] Vector2 spawnLeft;
+	[SerializeField] Vector2 spawnRight;
 	[SerializeField] Transform[] spawnPoints;
-	private List<GameObject> enemies = new List<GameObject>();
 
 	void Start()
 	{
@@ -16,15 +19,12 @@ public class OthersSpawn : MonoBehaviour {
 
 	IEnumerator Spawn()
 	{
-
 		SpawnOther();
 		yield return new WaitForSeconds(spawnTime);
 
 		while (enabled)
 		{
-
-			int randSpawn = Random.Range(0, spawnPoints.Length);
-			
+			SpawnOther();
 			yield return new WaitForSeconds(spawnTime);
 		}
 
@@ -33,10 +33,10 @@ public class OthersSpawn : MonoBehaviour {
 
 	private void SpawnOther()
 	{
-		int spawnPointIndex;
+		float spawnPointX;
 
-		spawnPointIndex = Random.Range(0, spawnPoints.Length);
-		GameObject enn = Instantiate(otherPrefab, spawnPoints[spawnPointIndex]);
-		enemies.Add(enn);
+		spawnPointX = Random.Range(spawnLeft.x, spawnRight.x);
+		Rigidbody2D otherRB = Instantiate(otherPrefab, new Vector3(spawnPointX, spawnLeft.y), Quaternion.identity).GetComponent<Rigidbody2D>();
+		otherRB.AddForce(new Vector2(0,impulseForceOnSpawn), ForceMode2D.Impulse);
 	}
 }
