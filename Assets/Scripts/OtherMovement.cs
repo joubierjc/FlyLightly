@@ -6,7 +6,7 @@ using DG.Tweening;
 public class OtherMovement : MonoBehaviour {
 
 	[SerializeField] float waitTime = 2f;
-	[SerializeField] float timetoReachPosition = 1f;
+	[SerializeField] float timeToReachPosition = 1f;
 	[SerializeField] float stepRange = .5f;
 	[SerializeField] float leftLimit;
 	[SerializeField] float rightLimit;
@@ -26,23 +26,23 @@ public class OtherMovement : MonoBehaviour {
 					if(random < 0.5f)
 					{
 						//Move Left
-						transform.DOMoveX(posX - stepRange, timetoReachPosition);
+						transform.DOMoveX(posX - stepRange, timeToReachPosition);
 					}
 					else
 					{
 						//Move Right
-						transform.DOMoveX(posX + stepRange, timetoReachPosition);
+						transform.DOMoveX(posX + stepRange, timeToReachPosition);
 					}
 				}
 			else if(posX+stepRange > rightLimit)
 				{
 					//Move Left
-					transform.DOMoveX(posX - stepRange, timetoReachPosition);
+					transform.DOMoveX(posX - stepRange, timeToReachPosition);
 				}
 			else
 				{
 					// Move Right
-					transform.DOMoveX(posX + stepRange, timetoReachPosition);
+					transform.DOMoveX(posX + stepRange, timeToReachPosition);
 				}
 
 

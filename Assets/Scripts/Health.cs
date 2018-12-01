@@ -6,12 +6,18 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour {
 
 	public float maxValue;
-	public float value;
-	public float localDecayMultiplicator;
+	float value;
+	float randomDecayFactor;
 	public UnityEvent onDeath;
 
+	private void Start()
+	{
+		ToFullLife();
+		randomDecayFactor = Random.Range(1, 3);
+	}
+
 	private void Update() {
-		value -= Time.deltaTime * localDecayMultiplicator * GameManager.Instance.DecayingHealthMultiplicator;
+		value -= Time.deltaTime * randomDecayFactor * GameManager.Instance.DecayingHealthMultiplicator;
 		if (value < 0) {
 			onDeath.Invoke();
 		}
