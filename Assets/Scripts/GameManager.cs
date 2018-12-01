@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	private float score;
 	public int multiplicator;
 
+	public float startingSpawnTimeOther = 5f;
 	public float spawnTimeOther { get; set; }
 
 	public float startingDecayingHealthMultiplicator = 1f;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour {
 			Instance = this;
 		}
 		DecayingHealthMultiplicator = startingDecayingHealthMultiplicator;
-
+		spawnTimeOther = startingSpawnTimeOther;
 	}
 
 	private void Start()
