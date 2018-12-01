@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 				if (interractable != null) {
 					interractable.Interract();
 					nextInterract = Time.time + InterractCoolDown;
+					return;
 				}
 			}
 		}
