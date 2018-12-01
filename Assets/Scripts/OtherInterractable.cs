@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OtherInterractable : Interractible
+public class OtherInterractable : Interractable
 {
 	public float impulseForce = 5f;
 

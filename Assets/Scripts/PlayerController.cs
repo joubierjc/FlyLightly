@@ -6,6 +6,10 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
 
+	public static PlayerController Instance = null;
+
+	public ResourceType currentResource = ResourceType.None;
+
 	public float moveSpeed;
 	public Transform groundChecker;
 
@@ -19,6 +23,10 @@ public class PlayerController : MonoBehaviour {
 	const float groundedRadius = 0.2f;
 
 	private void Awake() {
+		if (Instance == null) {
+			Instance = this;
+		}
+
 		rb2D = GetComponent<Rigidbody2D>();
 	}
 
@@ -32,16 +40,14 @@ public class PlayerController : MonoBehaviour {
 		bool wasGrounded = grounded;
 		grounded = false;
 
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChecker.position, radius, groundLayer);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
-			{
+			if (colliders[i].gameObject != gameObject) {
 				grounded = true;
-				//if (!wasGrounded)
+				//if (!wasGrounded) {
 					//todo
+				//}
 			}
 		}
 
@@ -51,7 +57,5 @@ public class PlayerController : MonoBehaviour {
 			vertical
 		);
 	}
-
-
 
 }
