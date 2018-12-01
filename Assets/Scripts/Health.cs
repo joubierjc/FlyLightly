@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
 	public UnityEvent onDeath;
 
 	private void Update() {
-		value -= Time.deltaTime * localDecayMultiplicator * GameManager.Instance.decayingHealthMultiplicator;
+		value -= Time.deltaTime * localDecayMultiplicator * GameManager.Instance.DecayingHealthMultiplicator;
 		if (value < 0) {
 			onDeath.Invoke();
 		}
