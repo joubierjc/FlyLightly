@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicator: 20
+  decayingHealthMultiplicator: 1
   scoreText: {fileID: 1421812353}
 --- !u!4 &852113750
 Transform:
@@ -313,7 +314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1229234709
 Transform:
   m_ObjectHideFlags: 0
