@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
 	public float spawnTimeOther { get; set; }
 
+	public float startingDecayingHealthMultiplicator = 1f;
 	public float DecayingHealthMultiplicator { get; set; }
 
 	[SerializeField] Text scoreText;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour {
 		if (Instance == null) {
 			Instance = this;
 		}
-		DecayingHealthMultiplicator = 1f;
+		DecayingHealthMultiplicator = startingDecayingHealthMultiplicator;
 
 	}
 
