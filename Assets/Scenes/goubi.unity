@@ -878,41 +878,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1613172204712150, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613172204712150, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801140316258692, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091944819186796, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564120877334146, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 50626521949927622, guid: d21e0ec0758c6a247a403453f6f4430b,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114760045817675922, guid: d21e0ec0758c6a247a403453f6f4430b,
-        type: 2}
-      propertyPath: startingMoveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114760045817675922, guid: d21e0ec0758c6a247a403453f6f4430b,
-        type: 2}
-      propertyPath: startingInterractCoolDown
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
   m_IsPrefabParent: 0
