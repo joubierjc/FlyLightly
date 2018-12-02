@@ -16,7 +16,6 @@ public class FriendInterractable : Interractable {
 
 	public override void Interract() {
 		if (PlayerController.Instance.currentResource == ressource) {
-			GetComponent<Health>().ToFullLife();
 			switch (ressource)
 			{
 				case ResourceType.Ammo:
@@ -32,6 +31,7 @@ public class FriendInterractable : Interractable {
 					GameManager.Instance.audioManager.Play("slurp-commander");
 					break;
 			}
+			GetComponent<Health>().RestoreHealth();
 			PlayerController.Instance.currentResource = ResourceType.None;
 			
 		}

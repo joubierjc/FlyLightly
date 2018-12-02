@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour {
 		Application.Quit();
 	}
 
+
+
 	private void Update() {
 
 		if(Input.GetKeyDown(KeyCode.Escape))

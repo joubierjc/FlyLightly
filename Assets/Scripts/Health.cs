@@ -8,6 +8,8 @@ public class Health : MonoBehaviour {
 
 	public float maxValue;
 	public float value;
+	[Range(0f, 1f)]
+	public float restorePercent = 0.75f;
 	float randomDecayFactor;
 	public UnityEvent onDeath;
 
@@ -16,7 +18,7 @@ public class Health : MonoBehaviour {
 
 	private void Start()
 	{
-		ToFullLife();
+		value = maxValue;
 		randomDecayFactor = Random.Range(1, 3);
 	}
 
@@ -28,8 +30,8 @@ public class Health : MonoBehaviour {
 		}
 	}
 
-	public void ToFullLife() {
-		value = maxValue;
+	public void RestoreHealth() {
+		value = Mathf.Lerp(value, maxValue, restorePercent);
 	}
 
 }

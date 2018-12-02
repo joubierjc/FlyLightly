@@ -6,9 +6,14 @@ public class PlayerController : MonoBehaviour {
 
 	public static PlayerController Instance = null;
 
+	[Header("Controls settings")]
+	public KeyCode left = KeyCode.LeftArrow;
+	public KeyCode right = KeyCode.RightArrow;
+	public KeyCode jump = KeyCode.Space;
+	public KeyCode use = KeyCode.E;
+
 	[Header("Interract settings")]
-	public SpriteRenderer interractRenderer;
-	public Sprite interractSprite;
+	public GameObject interractRenderer;
 
 	[Header("Resources settings")]
 	public ResourceType currentResource = ResourceType.None;
@@ -81,21 +86,24 @@ public class PlayerController : MonoBehaviour {
 			.ToArray();
 
 		if (interractables.Length > 0) {
-			interractRenderer.sprite = interractSprite;
-			if (nextInterract < Time.time && Input.GetButton("Fire1")) {
+			interractRenderer.SetActive(true);
+			if (nextInterract < Time.time && Input.GetKey(use)) {
 				interractables[0].Interract();
 				nextInterract = Time.time + InterractCoolDown;
 			}
 		}
 		else {
-			interractRenderer.sprite = null;
+			interractRenderer.SetActive(false);
 		}
 	}
 
 	private void FixedUpdate() {
 		// GET INPUTS
-		var horizontal = Input.GetAxisRaw("Horizontal");
-		var vertical = grounded && Input.GetButton("Jump") ? jumpForce : rb2D.velocity.y;
+		var horizontal = 0f;
+		horizontal += Input.GetKey(left) ? -1f : 0f;
+		horizontal += Input.GetKey(right) ? 1f : 0f;
+
+		var vertical = grounded && Input.GetKey(jump) ? jumpForce : rb2D.velocity.y;
 
 		// GROUND CHECK
 		bool wasGrounded = grounded;
@@ -121,6 +129,7 @@ public class PlayerController : MonoBehaviour {
 		// UPDATE ANIMATOR PARAMS
 		prevHorizontalDirection = horizontal > 0f ? -1f : (horizontal < 0f ? 1f : prevHorizontalDirection);
 		transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
+		interractRenderer.transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
 		animator.SetFloat("MoveSpeed", Mathf.Abs(rb2D.velocity.x));
 	}
 
