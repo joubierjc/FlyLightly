@@ -3,47 +3,84 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class OtherMovement : MonoBehaviour {
+public class OtherMovement : MonoBehaviour
+{
 
 	[SerializeField] float waitTime = 2f;
 	[SerializeField] float timeToReachPosition = 1f;
 	[SerializeField] float stepRange = .5f;
 	[SerializeField] float leftLimit;
 	[SerializeField] float rightLimit;
+
+	[Header("Animation")]
+	public Animator animator;
+
+	private float MoveSpeed = 0f;
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		StartCoroutine(Move());
 	}
 
 	IEnumerator Move()
 	{
-		while(enabled)
+		while (enabled)
 		{
 			float posX = transform.position.x;
-			if (posX+stepRange < rightLimit && posX-stepRange > leftLimit)
-				{
-					float random = Random.value;
-					if(random < 0.5f)
-					{
-						//Move Left
-						transform.DOMoveX(posX - stepRange, timeToReachPosition);
-					}
-					else
-					{
-						//Move Right
-						transform.DOMoveX(posX + stepRange, timeToReachPosition);
-					}
-				}
-			else if(posX+stepRange > rightLimit)
+			if (posX + stepRange < rightLimit && posX - stepRange > leftLimit)
+			{
+				float random = Random.value;
+				MoveSpeed = 1f;
+				animator.SetFloat("MoveSpeed", MoveSpeed);
+				if (random < 0.5f)
 				{
 					//Move Left
-					transform.DOMoveX(posX - stepRange, timeToReachPosition);
+					transform.DOMoveX(posX - stepRange, timeToReachPosition).OnComplete(() =>
+					{
+						MoveSpeed = 0f;
+						animator.SetFloat("MoveSpeed", MoveSpeed);
+					});
+
+					transform.localScale = new Vector3(1f, 1f, 1f);
 				}
-			else
+				else
 				{
-					// Move Right
-					transform.DOMoveX(posX + stepRange, timeToReachPosition);
+					//Move Right
+					transform.DOMoveX(posX + stepRange, timeToReachPosition).OnComplete(() =>
+					{
+						MoveSpeed = 0f;
+						animator.SetFloat("MoveSpeed", MoveSpeed);
+					});
+
+					transform.localScale = new Vector3(-1f, 1f, 1f);
 				}
+			}
+			else if (posX + stepRange > rightLimit)
+			{
+				//Move Left
+				MoveSpeed = 1f;
+				animator.SetFloat("MoveSpeed", MoveSpeed);
+				transform.DOMoveX(posX - stepRange, timeToReachPosition).OnComplete(() =>
+				{
+					MoveSpeed = 0f;
+					animator.SetFloat("MoveSpeed", MoveSpeed);
+				});
+
+				transform.localScale = new Vector3(1f, 1f, 1f);
+			}
+			else
+			{
+				// Move Right
+				MoveSpeed = 1f;
+				animator.SetFloat("MoveSpeed", MoveSpeed);
+				transform.DOMoveX(posX + stepRange, timeToReachPosition).OnComplete(() =>
+				{
+					MoveSpeed = 0f;
+					animator.SetFloat("MoveSpeed", MoveSpeed);
+				});
+
+				transform.localScale = new Vector3(-1f, 1f, 1f);
+			}
 
 
 			yield return new WaitForSeconds(waitTime);
