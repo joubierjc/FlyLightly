@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OthersSpawn : MonoBehaviour {
 
-	[SerializeField] GameObject otherPrefab;
+	[SerializeField] GameObject[] othersPrefab;
 	[SerializeField] float impulseForceOnSpawn = 5f;
 
 	[Header("Limits")]
@@ -39,8 +39,10 @@ public class OthersSpawn : MonoBehaviour {
 	private void SpawnOther() {
 		float spawnPointX;
 
+		int otherIndex = Random.Range(0, othersPrefab.Length); 
+
 		spawnPointX = Random.Range(spawnLeft.x, spawnRight.x);
-		Rigidbody2D otherRB = Instantiate(otherPrefab, new Vector3(spawnPointX, spawnLeft.y), Quaternion.identity).GetComponent<Rigidbody2D>();
+		Rigidbody2D otherRB = Instantiate(othersPrefab[otherIndex], new Vector3(spawnPointX, spawnLeft.y), Quaternion.identity).GetComponent<Rigidbody2D>();
 		otherRB.AddForce(new Vector2(0, impulseForceOnSpawn), ForceMode2D.Impulse);
 	}
 }

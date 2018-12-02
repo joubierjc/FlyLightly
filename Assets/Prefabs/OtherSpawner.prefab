@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1741926937607610}
+  m_IsPrefabAsset: 1
+--- !u!1 &1741926937607610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4989995987493476}
+  - component: {fileID: 114415012362845374}
+  m_Layer: 0
+  m_Name: OtherSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4989995987493476
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741926937607610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114415012362845374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741926937607610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0554c1c34dedfa14d8347f4387fcdd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  othersPrefab:
+  - {fileID: 1535540806547714, guid: 5488843a524ce0b479c30e4e34dac7f2, type: 2}
+  - {fileID: 1509608566534608, guid: 015249840a3145849ab68f97a1c1c517, type: 2}
+  - {fileID: 1013481359034404, guid: a5eb14706737e7b47b56e1e2379cea57, type: 2}
+  - {fileID: 1424644975368416, guid: 9b14f2b9aa182ce4398ae754be48f994, type: 2}
+  - {fileID: 1690396138683140, guid: eab5ea9ef18bbe9419a0b49eac1606a3, type: 2}
+  impulseForceOnSpawn: 2
+  spawnLeft: {x: -5, y: -2}
+  spawnRight: {x: 0, y: -2}
