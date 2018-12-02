@@ -16,7 +16,7 @@ public class FriendInterractable : Interractable {
 
 	public override void Interract() {
 		if (PlayerController.Instance.currentResource == ressource) {
-			GetComponent<Health>().ToFullLife();
+			GetComponent<Health>().RestoreHealth();
 			PlayerController.Instance.currentResource = ResourceType.None;
 		}
 	}
