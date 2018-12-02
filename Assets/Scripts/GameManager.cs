@@ -36,13 +36,15 @@ public class GameManager : MonoBehaviour {
 	public GameObject pauseMenu;
 	public GameObject endMenu;
 
+	public AudioManager audioManager;	
+
 	void Awake()
 	{
 		Time.timeScale = 0f;
 		if (Instance == null) {
 			Instance = this;
 		}
-
+		audioManager.Play("menuStart");
 		Init();
 	}
 
@@ -63,6 +65,8 @@ public class GameManager : MonoBehaviour {
 	public void NewGame()
 	{
 		Time.timeScale = 1f;
+		audioManager.Stop("menuStart");
+		audioManager.Play("theme");
 		startMenu.SetActive(false);
 		Init();
 		othersSpawner.StartSpawn();

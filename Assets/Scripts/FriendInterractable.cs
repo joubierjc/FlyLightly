@@ -16,8 +16,24 @@ public class FriendInterractable : Interractable {
 
 	public override void Interract() {
 		if (PlayerController.Instance.currentResource == ressource) {
+			switch (ressource)
+			{
+				case ResourceType.Ammo:
+					GameManager.Instance.audioManager.Play("reload-gunner");
+					break;
+				case ResourceType.Oil:
+					GameManager.Instance.audioManager.Play("ok-engineer");
+					break;
+				case ResourceType.Food:
+					GameManager.Instance.audioManager.Play("yeah-cook");
+					break;
+				case ResourceType.Coffee:
+					GameManager.Instance.audioManager.Play("slurp-commander");
+					break;
+			}
 			GetComponent<Health>().RestoreHealth();
 			PlayerController.Instance.currentResource = ResourceType.None;
+			
 		}
 	}
 }
