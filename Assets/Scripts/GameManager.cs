@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject startMenu;
 	public GameObject pauseMenu;
+	public GameObject endMenu;
 
 	void Awake()
 	{
@@ -91,7 +92,9 @@ public class GameManager : MonoBehaviour {
 		Application.Quit();
 	}
 
+	public void EndGame() {
 
+	}
 
 	private void Update() {
 

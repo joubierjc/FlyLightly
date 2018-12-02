@@ -80,16 +80,23 @@ public class PlayerController : MonoBehaviour {
 				break;
 		}
 
-		var interractables = Physics2D.OverlapCircleAll(transform.position, interractRadius)
-			.Select(e => e.GetComponent<Interractable>())
-			.Where(e => e != null)
-			.ToArray();
 
-		if (interractables.Length > 0) {
-			interractRenderer.SetActive(true);
-			if (nextInterract < Time.time && Input.GetKey(use)) {
-				interractables[0].Interract();
-				nextInterract = Time.time + InterractCoolDown;
+
+		if (nextInterract < Time.time) {
+			var interractables = Physics2D.OverlapCircleAll(transform.position, interractRadius)
+				.Select(e => e.GetComponent<Interractable>())
+				.Where(e => e != null)
+				.ToArray();
+
+			if (interractables.Length > 0) {
+				interractRenderer.SetActive(true);
+				if (Input.GetKey(use)) {
+					interractables[0].Interract();
+					nextInterract = Time.time + InterractCoolDown;
+				}
+			}
+			else {
+				interractRenderer.SetActive(false);
 			}
 		}
 		else {
