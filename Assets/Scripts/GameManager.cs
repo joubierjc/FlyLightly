@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public float score;
 	[HideInInspector]
 	public float karma;
+	public float maxDistance = 10000f;
 	public int multiplicator = 20;
 
 	public OthersSpawn othersSpawner;
@@ -41,6 +42,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject endMenu;
 	public GameObject helpMenu;
 
+	[Header("End Settings")]
+	public GameObject congrats;
+	public Text finalDistanceText;
+	public Text karmaText;
+	public Text karmaMotivationalText;
+
+	[Header("Audio Manager")]
 	public AudioManager audioManager;
 
 	void Awake()
@@ -115,6 +123,16 @@ public class GameManager : MonoBehaviour {
 		gameOver = true;
 		endMenu.SetActive(true);
 		Time.timeScale = 0f;
+
+		karmaText.text = ((int)karma).ToString();
+		karmaText.color = karma >= 0f ? Color.green : Color.red;
+
+		finalDistanceText.text = ((int)score).ToString() + "m";
+		if (score >= maxDistance) {
+			congrats.SetActive(true);
+		}
+
+		karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost ?";
 	}
 
 	private void Update() {
