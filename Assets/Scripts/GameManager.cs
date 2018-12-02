@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 		if (Instance == null) {
 			Instance = this;
 		}
-		audioManager.Play("menuStart");
+		PlaySound("menuStart");
 		Init();
 	}
 
@@ -69,10 +69,15 @@ public class GameManager : MonoBehaviour {
 	{
 		Time.timeScale = 1f;
 		audioManager.Stop("menuStart");
-		audioManager.Play("theme");
+		PlaySound("theme");
 		startMenu.SetActive(false);
 		Init();
 		othersSpawner.StartSpawn();
+	}
+
+	public void PlaySound(string name)
+	{
+		audioManager.Play(name);
 	}
 
 	public void MenuButton()
