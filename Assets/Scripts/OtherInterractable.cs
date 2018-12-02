@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OtherInterractable : Interractable {
 	public float impulseForce = 5f;
-	public float scorePenalty = 100f; // ZIZOU
+	public float karmaPenalty = 100f; // ZIZOU
 
 	private void OnEnable() {
 		GameManager.Instance.othersCount++;
@@ -13,7 +13,7 @@ public class OtherInterractable : Interractable {
 	public override void Interract() {
 		GetComponent<Collider2D>().enabled = false;
 		GameManager.Instance.othersCount--;
-		GameManager.Instance.score -= scorePenalty;
+		GameManager.Instance.karma -= karmaPenalty;
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0, impulseForce), ForceMode2D.Impulse);
 
 		float rd = Random.value;
@@ -25,7 +25,7 @@ public class OtherInterractable : Interractable {
 		{
 			GameManager.Instance.audioManager.Play("death-other-2");
 		}
-		
+
 		Destroy(gameObject, 3f);
 	}
 }

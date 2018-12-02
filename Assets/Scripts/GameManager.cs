@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 	public static GameManager Instance = null;
 	[HideInInspector]
 	public float score;
+	[HideInInspector]
+	public float karma;
 	public int multiplicator = 20;
 
 	public OthersSpawn othersSpawner;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	public float Regen { get; set; }
 
 	private bool gameIsPaused = false;
+	private bool gameOver = false;
 
 	[SerializeField] Text scoreText;
 	[SerializeField] Text altitudeText;
@@ -97,12 +100,18 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndGame() {
-
+		gameOver = true;
+		endMenu.SetActive(true);
+		Time.timeScale = 0f;
 	}
 
 	private void Update() {
 
-		if(Input.GetKeyDown(KeyCode.Escape))
+		if (gameOver) {
+			return;
+		}
+
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			if (gameIsPaused)
 			{
@@ -122,7 +131,7 @@ public class GameManager : MonoBehaviour {
 		shipHeight += (Regen - othersCount * DecreasingHeightByOthers) * Time.deltaTime;
 		altitudeText.text = ((int)shipHeight).ToString();
 		if (shipHeight < 0) {
-			// todo defaite
+			EndGame();
 		}
 	}
 
