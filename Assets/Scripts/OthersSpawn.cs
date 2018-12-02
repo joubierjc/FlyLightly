@@ -10,14 +10,23 @@ public class OthersSpawn : MonoBehaviour {
 	[Header("Limits")]
 	[SerializeField] Vector2 spawnLeft;
 	[SerializeField] Vector2 spawnRight;
+	
 
-	void Start() {
+	public void StartSpawn()
+	{
 		StartCoroutine(Spawn());
 	}
 
+	public void StopSpawn()
+	{
+		StopCoroutine(Spawn());
+	}
+
 	IEnumerator Spawn() {
-		SpawnOther();
-		yield return new WaitForSeconds(GameManager.Instance.SpawnTimeOther);
+		
+			SpawnOther();
+			yield return new WaitForSeconds(GameManager.Instance.SpawnTimeOther);
+		
 
 		while (enabled) {
 			SpawnOther();
