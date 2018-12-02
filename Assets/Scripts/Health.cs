@@ -13,6 +13,8 @@ public class Health : MonoBehaviour {
 	float randomDecayFactor;
 	public UnityEvent onDeath;
 
+	private bool isDead = false;
+
 	[Header("UI")]
 	public Image healthHUD;
 
@@ -23,9 +25,29 @@ public class Health : MonoBehaviour {
 	}
 
 	private void Update() {
+
+		if(isDead)
+		{
+			return;
+		}
+
 		value -= Time.deltaTime * randomDecayFactor * GameManager.Instance.DecayingHealthMultiplicator;
 		healthHUD.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0f, maxValue, value));
-		if (value < 0) {
+
+		if (value < 0)
+		{
+
+			isDead = true;
+
+			if (GetComponent<FriendInterractable>().ressource == ResourceType.Coffee)
+			{
+				GameManager.Instance.audioManager.Play("death-commander");
+			}
+			else
+			{
+				GameManager.Instance.audioManager.Play("death-friend-man");
+			}
+
 			onDeath.Invoke();
 		}
 	}
