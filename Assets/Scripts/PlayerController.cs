@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
 	public float MoveSpeed { get; set; }
 	public Transform groundChecker;
 
+	[Header("Animation")]
+	public Animator animator;
+
 	private bool grounded;
 	private Vector2 direction;
 	private Rigidbody2D rb2D;
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 	const float interractRadius = 0.5f;
 
 	private float nextInterract;
+	private float prevHorizontalDirection = 1f;
 
 	private void Awake() {
 		if (Instance == null) {
@@ -81,6 +85,11 @@ public class PlayerController : MonoBehaviour {
 			Mathf.Lerp(rb2D.velocity.x, horizontal * MoveSpeed, 0.5f),
 			vertical
 		);
+
+		// UPDATE ANIMATOR PARAMS
+		prevHorizontalDirection = horizontal > 0f ? -1f : (horizontal < 0f ? 1f : prevHorizontalDirection);
+		transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
+		animator.SetFloat("MoveSpeed", Mathf.Abs(rb2D.velocity.x));
 	}
 
 }
