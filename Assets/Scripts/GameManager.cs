@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] Text scoreText;
 	[SerializeField] Text altitudeText;
 
+	[Header("Menus")]
 	public GameObject startMenu;
 	public GameObject pauseMenu;
 	public GameObject endMenu;
+	public GameObject helpMenu;
 
 	public AudioManager audioManager;
 
@@ -97,6 +99,11 @@ public class GameManager : MonoBehaviour {
 		gameIsPaused = true;
 		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
+	}
+
+	public void HelpButton()
+	{
+		helpMenu.SetActive(true);
 	}
 
 	public void QuitGame()
