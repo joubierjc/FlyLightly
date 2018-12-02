@@ -1,14 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
 
 	public static PlayerController Instance = null;
 
+	[Header("Interract settings")]
+	public SpriteRenderer interractRenderer;
+	public Sprite interractSprite;
+
+	[Header("Resources settings")]
 	public ResourceType currentResource = ResourceType.None;
+	public SpriteRenderer resourceRenderer;
+	public Sprite ammo;
+	public Sprite oil;
+	public Sprite food;
+	public Sprite coffee;
 
 	public float jumpForce = 10f;
 
@@ -46,16 +54,41 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (nextInterract < Time.time && Input.GetButton("Fire1")) {
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interractRadius);
-			for (int i = 0; i < colliders.Length; i++) {
-				var interractable = colliders[i].GetComponent<Interractable>();
-				if (interractable != null) {
-					interractable.Interract();
-					nextInterract = Time.time + InterractCoolDown;
-					return;
-				}
+		switch (currentResource) {
+			case ResourceType.None:
+				resourceRenderer.sprite = null;
+				break;
+			case ResourceType.Ammo:
+				resourceRenderer.sprite = ammo;
+				break;
+			case ResourceType.Oil:
+				resourceRenderer.sprite = oil;
+				break;
+			case ResourceType.Food:
+				resourceRenderer.sprite = food;
+				break;
+			case ResourceType.Coffee:
+				resourceRenderer.sprite = coffee;
+				break;
+			default:
+				resourceRenderer.sprite = null;
+				break;
+		}
+
+		var interractables = Physics2D.OverlapCircleAll(transform.position, interractRadius)
+			.Select(e => e.GetComponent<Interractable>())
+			.Where(e => e != null)
+			.ToArray();
+
+		if (interractables.Length > 0) {
+			interractRenderer.sprite = interractSprite;
+			if (nextInterract < Time.time && Input.GetButton("Fire1")) {
+				interractables[0].Interract();
+				nextInterract = Time.time + InterractCoolDown;
 			}
+		}
+		else {
+			interractRenderer.sprite = null;
 		}
 	}
 
@@ -63,7 +96,6 @@ public class PlayerController : MonoBehaviour {
 		// GET INPUTS
 		var horizontal = Input.GetAxisRaw("Horizontal");
 		var vertical = grounded && Input.GetButton("Jump") ? jumpForce : rb2D.velocity.y;
-
 
 		// GROUND CHECK
 		bool wasGrounded = grounded;
