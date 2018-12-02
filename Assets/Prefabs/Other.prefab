@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impulseForce: 5
-  scorePenalty: 50
+  scorePenalty: 20
 --- !u!114 &114494803564960814
 MonoBehaviour:
   m_ObjectHideFlags: 1
