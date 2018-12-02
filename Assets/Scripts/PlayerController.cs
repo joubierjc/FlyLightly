@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 
 	public ResourceType currentResource = ResourceType.None;
 
+	public float jumpForce = 10f;
+
 	public float startingInterractCoolDown = 1f;
 	public float InterractCoolDown { get; set; }
 	public float startingMoveSpeed = 10f;
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 	private void FixedUpdate() {
 		// GET INPUTS
 		var horizontal = Input.GetAxisRaw("Horizontal");
-		var vertical = grounded && Input.GetButton("Jump") ? 5f : rb2D.velocity.y;
+		var vertical = grounded && Input.GetButton("Jump") ? jumpForce : rb2D.velocity.y;
 
 
 		// GROUND CHECK

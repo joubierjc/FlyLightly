@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour {
 
 	public float maxValue;
-	float value;
+	public float value;
 	float randomDecayFactor;
 	public UnityEvent onDeath;
 
