@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject pauseMenu;
 	public GameObject endMenu;
 
-	public AudioManager audioManager;	
+	public AudioManager audioManager;
 
 	void Awake()
 	{
