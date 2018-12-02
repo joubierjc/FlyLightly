@@ -58,3 +58,57 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: menuStart
+    clip: {fileID: 8300000, guid: 7863db2104dd0d74bbf64e309d670261, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: death-friend-man
+    clip: {fileID: 8300000, guid: d81a46423f8992249a683e7acd8c6bd2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: death-other-1
+    clip: {fileID: 8300000, guid: e9b9695b5a7698e4db4920c0d024d133, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: death-other-2
+    clip: {fileID: 8300000, guid: 915e28e2066ee824c88d79b62e69e5ea, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: death-commander
+    clip: {fileID: 8300000, guid: 5d234fce2f5249a47acff7ca570c9a5b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ok-engineer
+    clip: {fileID: 8300000, guid: 99c191c86c1b42f4e99d2b089ef48a94, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: reload-gunner
+    clip: {fileID: 8300000, guid: dfd598080119f3643b2afda5a5d8da97, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: slurp-commander
+    clip: {fileID: 8300000, guid: 74b55bc8364b02d419b05461712e9db6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: yeah-cook
+    clip: {fileID: 8300000, guid: d8a9e58094d51b24880231603bf84e4e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
