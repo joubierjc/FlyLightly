@@ -314,8 +314,7 @@ PolygonCollider2D:
       - {x: -3, y: 4}
       - {x: -2, y: 2}
       - {x: 7.75, y: 2}
-      - {x: 6.75, y: 0}
-      - {x: 5, y: 0}
+      - {x: 6.8, y: 0}
       - {x: -3, y: 0}
       - {x: -2, y: -2}
 --- !u!60 &60445884676004804
@@ -552,7 +551,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3a0617e9507e7ec4dbf94d1539d06cf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dc82cc050eb4474bb4ba4c397844546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -598,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4f37999c8862604d8cc87cf1e2ae179, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68e53e794b496b04b827e19a43980f08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -736,7 +735,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8b96866249741c41944b54708963af5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1112631846d34c4294d4d350894e476, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

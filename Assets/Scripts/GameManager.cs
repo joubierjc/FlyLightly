@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
 		Application.Quit();
 	}
 
-	public void EndGame() {
+	public void EndGame(bool sacrifice = false) {
 		gameOver = true;
 		endMenu.SetActive(true);
 		Time.timeScale = 0f;
@@ -132,7 +132,14 @@ public class GameManager : MonoBehaviour {
 			congrats.SetActive(true);
 		}
 
-		karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost ?";
+		if (sacrifice) {
+			karmaMotivationalText.text = karma >= 0f ? "You were to good for this world..." : "You chose to sacrifice yourself, but was it enough?";
+		}
+		else {
+			karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost?";
+		}
+
+		karmaMotivationalText.text = karmaMotivationalText.text.ToUpper();
 	}
 
 	private void Update() {
