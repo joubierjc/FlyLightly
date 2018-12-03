@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour {
 	public GameObject VCFollow;
 	public GameObject VCFollowShake;
 	public float stunDuration = 1f;
-	public float screenShakeStrength = 10f;
 
 	private bool gameIsPaused = false;
 	private bool gameOver = false;
