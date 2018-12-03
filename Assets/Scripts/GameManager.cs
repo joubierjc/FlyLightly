@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -25,10 +26,19 @@ public class GameManager : MonoBehaviour {
 
 	public float startingShipHeight = 3000f;
 	public float shipHeight;
+
 	public float startingDecreaseByOthers = 5f;
 	public float DecreasingHeightByOthers { get; set; }
+
 	public float startingRegen = 15f;
 	public float Regen { get; set; }
+
+	public float startingStunInterval = 20f;
+	public float StunInterval { get; set; }
+	public GameObject VCFollow;
+	public GameObject VCFollowShake;
+	public float stunDuration = 1f;
+	public float screenShakeStrength = 10f;
 
 	private bool gameIsPaused = false;
 	private bool gameOver = false;
@@ -51,6 +61,9 @@ public class GameManager : MonoBehaviour {
 	[Header("Audio Manager")]
 	public AudioManager audioManager;
 
+	private float nextStun = 0f;
+	private float dummyValue;
+
 	void Awake()
 	{
 		Time.timeScale = 0f;
@@ -70,6 +83,7 @@ public class GameManager : MonoBehaviour {
 			DecreasingHeightByOthers = startingDecreaseByOthers;
 			shipHeight = startingShipHeight;
 			Regen = startingRegen;
+			StunInterval = startingStunInterval;
 
 			score = 0;
 		}
@@ -83,6 +97,7 @@ public class GameManager : MonoBehaviour {
 		startMenu.SetActive(false);
 		Init();
 		othersSpawner.StartSpawn();
+		nextStun = Time.time + StunInterval;
 	}
 
 	public void PlaySound(string name)
@@ -164,6 +179,22 @@ public class GameManager : MonoBehaviour {
 			{
 				PauseGame();
 			}
+		}
+
+		// STUN SCREENSHAKE
+		if (nextStun < Time.time) {
+			nextStun = Time.time + StunInterval;
+
+			PlayerController.Instance.stunned = true;
+			VCFollowShake.SetActive(true);
+			VCFollow.SetActive(false);
+
+			dummyValue = 0f;
+			DOTween.To(() => dummyValue, x => dummyValue = x, 1f, stunDuration).OnComplete(() => {
+				VCFollow.SetActive(true);
+				VCFollowShake.SetActive(false);
+				PlayerController.Instance.stunned = false;
+			});
 		}
 
 		// SCORE
