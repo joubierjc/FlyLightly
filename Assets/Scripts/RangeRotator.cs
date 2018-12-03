@@ -13,10 +13,10 @@ public class RangeRotator : MonoBehaviour {
 	}
 
 	private void RotateToMax() {
-		transform.DORotate(new Vector3(0f, range.x, 0f), duration).OnComplete(RotateToMin);
+		transform.DORotate(new Vector3(0f, range.y, 0f), duration).OnComplete(RotateToMin);
 	}
 
 	private void RotateToMin() {
-		transform.DORotate(new Vector3(0f, range.y, 0f), duration).OnComplete(RotateToMax);
+		transform.DORotate(new Vector3(0f, range.x, 0f), duration).OnComplete(RotateToMax);
 	}
 }
