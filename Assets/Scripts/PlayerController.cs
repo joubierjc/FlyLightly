@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	public Sprite coffee;
 
 	public float jumpForce = 10f;
+	public bool stunned = false;
 
 	public float startingInterractCoolDown = 1f;
 	public float InterractCoolDown { get; set; }
@@ -80,7 +81,9 @@ public class PlayerController : MonoBehaviour {
 				break;
 		}
 
-
+		if (stunned) {
+			return;
+		}
 
 		if (nextInterract < Time.time) {
 			var interractables = Physics2D.OverlapCircleAll(transform.position, interractRadius)
@@ -105,6 +108,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
+		if (stunned) {
+			return;
+		}
+
 		// GET INPUTS
 		var horizontal = 0f;
 		horizontal += Input.GetKey(left) ? -1f : 0f;
