@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
 		interractRenderer.transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
 		animator.SetFloat("MoveSpeed", Mathf.Abs(rb2D.velocity.x));
+		animator.SetBool("isGrounded", grounded);
 	}
 
 }
