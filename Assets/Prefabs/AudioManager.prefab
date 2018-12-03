@@ -118,3 +118,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: boom
+    clip: {fileID: 8300000, guid: abbb19fd9b21d90409caf50df09d083d, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
