@@ -646,7 +646,7 @@ Prefab:
     - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
         type: 2}
       propertyPath: sounds.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4189972771619386, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
       propertyPath: m_LocalPosition.x
@@ -682,22 +682,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
         type: 2}
-      propertyPath: sounds.Array.data[10].name
-      value: suicide
+      propertyPath: sounds.Array.data[11].name
+      value: boom
       objectReference: {fileID: 0}
     - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
         type: 2}
-      propertyPath: sounds.Array.data[10].clip
+      propertyPath: sounds.Array.data[11].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 551d4dc210a21d2458c269e1f87c2fcd, type: 3}
+      objectReference: {fileID: 8300000, guid: abbb19fd9b21d90409caf50df09d083d, type: 3}
     - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
         type: 2}
-      propertyPath: sounds.Array.data[10].volume
-      value: 0.5
+      propertyPath: sounds.Array.data[11].volume
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
         type: 2}
-      propertyPath: sounds.Array.data[10].pitch
+      propertyPath: sounds.Array.data[11].pitch
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
