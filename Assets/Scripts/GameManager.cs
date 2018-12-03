@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject pauseMenu;
 	public GameObject endMenu;
 	public GameObject helpMenu;
+	public GameObject playHelpMenu;
+	public GameObject storyMenu;
 
 	[Header("End Settings")]
 	public GameObject congrats;
@@ -110,8 +112,23 @@ public class GameManager : MonoBehaviour {
 		yield break;
 	}
 
-	public void NewGame()
-	{
+	public void DisplayStory() {
+		startMenu.SetActive(false);
+		storyMenu.SetActive(true);
+	}
+
+	public void NewGame() {
+
+		storyMenu.SetActive(false);
+		playHelpMenu.SetActive(false);
+		helpMenu.SetActive(false);
+
+		var helpSeen = PlayerPrefs.GetInt("help-seen", 0);
+		if (helpSeen != 1) {
+			HelpButton(false);
+			return;
+		}
+
 		Time.timeScale = 1f;
 		audioManager.Stop("menuStart");
 		PlaySound("theme");
@@ -145,9 +162,17 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0f;
 	}
 
-	public void HelpButton()
+	public void HelpButton(bool fromMenu = true)
 	{
-		helpMenu.SetActive(true);
+		PlayerPrefs.SetInt("help-seen", 1);
+		if (fromMenu) {
+			playHelpMenu.SetActive(false);
+			helpMenu.SetActive(true);
+		}
+		else {
+			playHelpMenu.SetActive(true);
+			helpMenu.SetActive(false);
+		}
 	}
 
 	public void QuitGame()
