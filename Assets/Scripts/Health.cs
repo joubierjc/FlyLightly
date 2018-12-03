@@ -38,7 +38,7 @@ public class Health : MonoBehaviour {
 		{
 
 			isDead = true;
-
+			GetComponent<Animator>().SetBool("isDead", isDead);
 			if (GetComponent<FriendInterractable>().ressource == ResourceType.Coffee)
 			{
 				GameManager.Instance.audioManager.Play("death-commander");

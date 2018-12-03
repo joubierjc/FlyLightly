@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ressource: 1
+  karmaGains: 200
 --- !u!212 &212910948998009382
 SpriteRenderer:
   m_ObjectHideFlags: 1
