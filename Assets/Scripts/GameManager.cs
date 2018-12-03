@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour {
 
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour {
 
 	[HideInInspector]
 	public int othersCount = 0;
+	[HideInInspector]
+	public int friendCount = 3;
 
 	[Header("Ship Height")]
 	public float startingShipHeight = 3000f;
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour {
 	public float SpawnTimeOther { get; set; }
 	public float startingDecreaseByOthers = 5f;
 	public float DecreasingHeightByOthers { get; set; }
+	public UnityEvent onTopDied;
 
 	public float startingRegen = 15f;
 	public float Regen { get; set; }
@@ -70,9 +74,13 @@ public class GameManager : MonoBehaviour {
 
 	private float nextStun;
 	private float dummyValue;
+	private bool doom = false;
 
-	void Awake()
-	{
+	void Awake() {
+		//PlayerPrefs.SetInt("help-seen", 0);
+		friendCount = 3;
+		doom = false;
+
 		Time.timeScale = 0f;
 		if (Instance == null) {
 			Instance = this;
@@ -82,10 +90,8 @@ public class GameManager : MonoBehaviour {
 		nextStun = Time.time + StunInterval;
 	}
 
-	private void Init()
-	{
-		if (Time.timeScale == 1f)
-		{
+	private void Init() {
+		if (Time.timeScale == 1f) {
 			DecayingHealthMultiplicator = startingDecayingHealthMultiplicator;
 			SpawnTimeOther = startingSpawnTimeOther;
 			DecreasingHeightByOthers = startingDecreaseByOthers;
@@ -98,13 +104,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator IncreaseDecayFactor()
-	{
+	IEnumerator IncreaseDecayFactor() {
 		Health.decayFactor = 1f;
 		yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
 
-		while(enabled && Health.decayFactor <= 2f)
-		{
+		while (enabled && Health.decayFactor <= 2.5f) {
 			Health.decayFactor += additionnalDecay;
 			yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
 		}
@@ -138,32 +142,27 @@ public class GameManager : MonoBehaviour {
 		nextStun = Time.time + StunInterval;
 	}
 
-	public void PlaySound(string name)
-	{
+	public void PlaySound(string name) {
 		audioManager.Play(name);
 	}
 
-	public void MenuButton()
-	{
+	public void MenuButton() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	public void ResumeGame()
-	{
+	public void ResumeGame() {
 		gameIsPaused = false;
 		pauseMenu.SetActive(false);
 		Time.timeScale = 1f;
 	}
 
-	private void PauseGame()
-	{
+	private void PauseGame() {
 		gameIsPaused = true;
 		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
 	}
 
-	public void HelpButton(bool fromMenu = true)
-	{
+	public void HelpButton(bool fromMenu = true) {
 		PlayerPrefs.SetInt("help-seen", 1);
 		if (fromMenu) {
 			playHelpMenu.SetActive(false);
@@ -175,8 +174,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void QuitGame()
-	{
+	public void QuitGame() {
 		Application.Quit();
 	}
 
@@ -215,14 +213,11 @@ public class GameManager : MonoBehaviour {
 			EndGame();
 		}
 
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			if (gameIsPaused)
-			{
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (gameIsPaused) {
 				ResumeGame();
 			}
-			else
-			{
+			else {
 				PauseGame();
 			}
 		}
@@ -255,6 +250,11 @@ public class GameManager : MonoBehaviour {
 			audioManager.Stop("theme");
 			audioManager.Play("boom");
 			EndGame();
+		}
+
+		if (!doom && friendCount < 1) {
+			doom = true;
+			onTopDied.Invoke();
 		}
 	}
 

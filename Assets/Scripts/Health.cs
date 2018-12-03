@@ -13,6 +13,7 @@ public class Health : MonoBehaviour {
 	[HideInInspector]
 	public static float decayFactor;
 	public UnityEvent onDeath;
+	public bool isOnTopDeck = true;
 
 	private bool isDead = false;
 
@@ -31,8 +32,6 @@ public class Health : MonoBehaviour {
 		{
 			return;
 		}
-
-		
 
 		value -= Time.deltaTime * decayFactor * GameManager.Instance.DecayingHealthMultiplicator;
 		healthHUD.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0f, maxValue, value));
@@ -53,7 +52,11 @@ public class Health : MonoBehaviour {
 				GameManager.Instance.audioManager.Play("death-friend-man");
 			}
 
+			if (isOnTopDeck) {
+				GameManager.Instance.friendCount--;
+			}
 			onDeath.Invoke();
+
 		}
 	}
 
