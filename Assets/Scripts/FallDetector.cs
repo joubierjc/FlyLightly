@@ -6,9 +6,8 @@ public class FallDetector : MonoBehaviour {
 
 	public float karmaGains = 500f;
 
-	private void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.collider.tag == "Player") {
-			GameManager.Instance.audioManager.Play("suicide");
+	private void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.tag == "Player") {
 			GameManager.Instance.karma += karmaGains;
 			GameManager.Instance.EndGame(true);
 		}

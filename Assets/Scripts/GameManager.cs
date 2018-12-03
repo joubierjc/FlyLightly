@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
 	public float maxDistance = 5000f;
 	public int multiplicator = 20;
 
+	private bool isSacrificing = false;
+
 	[Header("Health Decay Settings")]
 	public float startingDecayingHealthMultiplicator = 1f;
 	public float DecayingHealthMultiplicator { get; set; }
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour {
 	[Header("Ship Height")]
 	public float startingShipHeight = 3000f;
 	public float shipHeight;
+	public float CurrentGains { get; private set; }
 
 	[Header("Other Settings")]
 	public OthersSpawn othersSpawner;
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject hud;
 	public GameObject startMenu;
 	public GameObject pauseMenu;
+	public Image endPanel;
 	public GameObject endMenu;
 	public GameObject helpMenu;
 	public GameObject playHelpMenu;
@@ -195,32 +199,55 @@ public class GameManager : MonoBehaviour {
 		Application.Quit();
 	}
 
+	Tween endTween = null;
 	public void EndGame(bool sacrifice = false) {
-		audioManager.Stop("theme");
-
 		gameOver = true;
-		endMenu.SetActive(true);
-		Time.timeScale = 0f;
-
-		karmaText.text = ((int)karma).ToString();
-		karmaText.color = karma >= 0f ? Color.green : Color.red;
-
-		finalDistanceText.text = ((int)score).ToString() + "m";
-		if (score >= maxDistance) {
-			congrats.SetActive(true);
-		}
 
 		if (sacrifice) {
-			karmaMotivationalText.text = karma >= 0f ? "You were to good for this world..." : "You chose to sacrifice yourself, but was it worth?";
-		}
-		else {
-			karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost?";
+			isSacrificing = true;
 		}
 
-		karmaMotivationalText.text = karmaMotivationalText.text.ToUpper();
+		endTween.Kill();
+		endTween = DOTween.To(
+			() => endPanel.color,
+			x => endPanel.color = x,
+			new Color(endPanel.color.r, endPanel.color.g, endPanel.color.b, 1f),
+			transitionDuration
+		).OnComplete(() => {
+			audioManager.Stop("theme");
+			endMenu.SetActive(true);
+			Time.timeScale = 0f;
+
+			karmaText.text = ((int)karma).ToString();
+			karmaText.color = karma >= 0f ? Color.green : Color.red;
+
+			finalDistanceText.text = ((int)Mathf.Clamp(score, 0f, maxDistance)).ToString() + "m";
+			if (score >= maxDistance) {
+				congrats.SetActive(true);
+			}
+
+			if (shipHeight < 50f) {
+				audioManager.Play("boom");
+			}
+
+			if (isSacrificing) {
+				GameManager.Instance.audioManager.Play("suicide");
+				karmaMotivationalText.text = karma >= 0f ? "You were to good for this world..." : "You chose to sacrifice yourself, but was it worth?";
+			}
+			else {
+				karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost?";
+			}
+
+			karmaMotivationalText.text = karmaMotivationalText.text.ToUpper();
+		});
 	}
 
 	private void Update() {
+
+		// SHIP HEIGHT
+		CurrentGains = (Regen - othersCount * DecreasingHeightByOthers);
+		shipHeight += CurrentGains * Time.deltaTime;
+		altitudeText.text = ((int)shipHeight).ToString();
 
 		if (gameOver) {
 			return;
@@ -260,12 +287,8 @@ public class GameManager : MonoBehaviour {
 		score += Time.deltaTime * multiplicator;
 		scoreText.text = ((int)score).ToString();
 
-		// SHIP HEIGHT
-		shipHeight += (Regen - othersCount * DecreasingHeightByOthers) * Time.deltaTime;
-		altitudeText.text = ((int)shipHeight).ToString();
-		if (shipHeight < 0) {
+		if (shipHeight < 50f) {
 			audioManager.Stop("theme");
-			audioManager.Play("boom");
 			EndGame();
 		}
 

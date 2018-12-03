@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackGroundScroller : MonoBehaviour {
 
 	public float scrollSpeed;
+	public float verticalModifier;
 	private Vector2 savedOffset;
 
 	private Renderer rend;
@@ -18,8 +19,10 @@ public class BackGroundScroller : MonoBehaviour {
 	}
 
 	private void Update() {
-		float x = Mathf.Repeat(Time.unscaledTime * scrollSpeed, 1);
-		Vector2 offset = new Vector2(x, savedOffset.y);
+		var x = Mathf.Repeat(Time.unscaledTime * scrollSpeed, 1);
+		var y = Mathf.Repeat(GameManager.Instance.shipHeight * scrollSpeed * verticalModifier, 1);
+
+		Vector2 offset = new Vector2(x, y);
 		rend.sharedMaterial.SetTextureOffset("_MainTex", offset);
 	}
 
