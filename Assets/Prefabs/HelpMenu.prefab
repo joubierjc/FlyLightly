@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224521870447269884}
   - component: {fileID: 222986744177278248}
   - component: {fileID: 114719153432253062}
+  - component: {fileID: 114983661957018574}
   m_Layer: 5
   m_Name: job
   m_TagString: Untagged
@@ -54,6 +55,7 @@ GameObject:
   - component: {fileID: 224773420013140224}
   - component: {fileID: 222825949626473568}
   - component: {fileID: 114530127237005840}
+  - component: {fileID: 114042068569893598}
   m_Layer: 5
   m_Name: function
   m_TagString: Untagged
@@ -71,6 +73,7 @@ GameObject:
   - component: {fileID: 224736461899431464}
   - component: {fileID: 222396475347454332}
   - component: {fileID: 114127511445230790}
+  - component: {fileID: 114960330897048548}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -121,6 +124,7 @@ GameObject:
   - component: {fileID: 224254754967481970}
   - component: {fileID: 222205815965541654}
   - component: {fileID: 114958388302500126}
+  - component: {fileID: 114050346407841736}
   m_Layer: 5
   m_Name: MenuText
   m_TagString: Untagged
@@ -138,6 +142,7 @@ GameObject:
   - component: {fileID: 224976344882630748}
   - component: {fileID: 222789244191744910}
   - component: {fileID: 114389425966172624}
+  - component: {fileID: 114423765038612766}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -155,6 +160,7 @@ GameObject:
   - component: {fileID: 224681436685302700}
   - component: {fileID: 222413968982562216}
   - component: {fileID: 114984930767104730}
+  - component: {fileID: 114764753329199310}
   m_Layer: 5
   m_Name: function
   m_TagString: Untagged
@@ -172,6 +178,7 @@ GameObject:
   - component: {fileID: 224880611230643424}
   - component: {fileID: 222708821180617340}
   - component: {fileID: 114719371077870336}
+  - component: {fileID: 114311984528731642}
   m_Layer: 5
   m_Name: function
   m_TagString: Untagged
@@ -205,6 +212,7 @@ GameObject:
   - component: {fileID: 224786499427828988}
   - component: {fileID: 222548561323985140}
   - component: {fileID: 114351745507447810}
+  - component: {fileID: 114445432748197244}
   m_Layer: 5
   m_Name: job
   m_TagString: Untagged
@@ -222,6 +230,7 @@ GameObject:
   - component: {fileID: 224377817064805946}
   - component: {fileID: 222210497143818068}
   - component: {fileID: 114670414656290380}
+  - component: {fileID: 114926434163322774}
   m_Layer: 5
   m_Name: job
   m_TagString: Untagged
@@ -239,6 +248,7 @@ GameObject:
   - component: {fileID: 224212174345533908}
   - component: {fileID: 222452017627027790}
   - component: {fileID: 114702434403576206}
+  - component: {fileID: 114615304547056684}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -256,6 +266,7 @@ GameObject:
   - component: {fileID: 224069762749730582}
   - component: {fileID: 222027106266248926}
   - component: {fileID: 114722056701080268}
+  - component: {fileID: 114006752050766990}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -273,6 +284,7 @@ GameObject:
   - component: {fileID: 224448158015031322}
   - component: {fileID: 222543463485735956}
   - component: {fileID: 114808627719793462}
+  - component: {fileID: 114878314638930080}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -322,6 +334,7 @@ GameObject:
   - component: {fileID: 224342750379269706}
   - component: {fileID: 222291059896205564}
   - component: {fileID: 114140450309790320}
+  - component: {fileID: 114358726405545900}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -339,6 +352,7 @@ GameObject:
   - component: {fileID: 224031088740079010}
   - component: {fileID: 222025518173926906}
   - component: {fileID: 114151560550256472}
+  - component: {fileID: 114081424674396270}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -356,6 +370,7 @@ GameObject:
   - component: {fileID: 224159078922562204}
   - component: {fileID: 222840739545066108}
   - component: {fileID: 114067151808295968}
+  - component: {fileID: 114736946050009016}
   m_Layer: 5
   m_Name: function
   m_TagString: Untagged
@@ -373,6 +388,7 @@ GameObject:
   - component: {fileID: 224957505701160990}
   - component: {fileID: 222628644851026296}
   - component: {fileID: 114992080130765080}
+  - component: {fileID: 114225401996158798}
   m_Layer: 5
   m_Name: job
   m_TagString: Untagged
@@ -390,6 +406,7 @@ GameObject:
   - component: {fileID: 224995990137792066}
   - component: {fileID: 222036849597370014}
   - component: {fileID: 114545828766106162}
+  - component: {fileID: 114412773213533060}
   m_Layer: 5
   m_Name: Sprite
   m_TagString: Untagged
@@ -425,6 +442,7 @@ GameObject:
   - component: {fileID: 224477707687091612}
   - component: {fileID: 222658148751384640}
   - component: {fileID: 114764958828408428}
+  - component: {fileID: 114461496518770302}
   m_Layer: 5
   m_Name: job
   m_TagString: Untagged
@@ -442,6 +460,7 @@ GameObject:
   - component: {fileID: 224213727108337994}
   - component: {fileID: 222328270657408202}
   - component: {fileID: 114091118587235436}
+  - component: {fileID: 114253010129804822}
   m_Layer: 5
   m_Name: function
   m_TagString: Untagged
@@ -459,6 +478,7 @@ GameObject:
   - component: {fileID: 224967015005950468}
   - component: {fileID: 222861523112769764}
   - component: {fileID: 114118678466554540}
+  - component: {fileID: 114488034151658022}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -466,6 +486,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114006752050766990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501423730275368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114042068569893598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1155138258889380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114050346407841736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294429302091978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114067151808295968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,6 +562,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Your one true love, she is the pillar of the team, keep her awake with some    ,
     or the crew will regret it deeply
+--- !u!114 &114081424674396270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775115737960888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114091118587235436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,6 +729,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDuration: 0.2
+--- !u!114 &114225401996158798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792109787766518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114253010129804822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852143940699060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114311984528731642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396933832618954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114351745507447810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -688,6 +806,20 @@ MonoBehaviour:
   m_Text: 'Cook
 
 '
+--- !u!114 &114358726405545900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1714801773008156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114389425966172624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,6 +847,76 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114412773213533060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808031195844064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114423765038612766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328252162393164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114445432748197244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423191855625242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114461496518770302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827734897066528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114488034151658022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955648532489454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114530127237005840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,6 +1030,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114615304547056684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471225159033466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114670414656290380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -982,6 +1198,34 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114736946050009016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786708398326680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114764753329199310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357275528529822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114764958828408428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1054,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15218939, g: 0.30916637, b: 0.5660378, a: 1}
+  m_Color: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1069,6 +1313,34 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114878314638930080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621029081897240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114926434163322774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467189539096088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114958388302500126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1102,6 +1374,34 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: MENU
+--- !u!114 &114960330897048548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1186631202426368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114983661957018574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021033337737548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114984930767104730
 MonoBehaviour:
   m_ObjectHideFlags: 1
