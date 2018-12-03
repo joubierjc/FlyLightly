@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impulseForce: 5
   karmaPenalty: 100
+  randomRotationValues: {x: -120, y: 120}
+  deathDuration: 3
 --- !u!212 &212447168647988114
 SpriteRenderer:
   m_ObjectHideFlags: 1
