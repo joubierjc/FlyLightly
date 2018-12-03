@@ -15,24 +15,28 @@ public class GameManager : MonoBehaviour {
 	public float maxDistance = 5000f;
 	public int multiplicator = 20;
 
-	public OthersSpawn othersSpawner;
-	public float startingSpawnTimeOther = 5f;
-	public float SpawnTimeOther { get; set; }
-
+	[Header("Health Decay Settings")]
 	public float startingDecayingHealthMultiplicator = 1f;
 	public float DecayingHealthMultiplicator { get; set; }
+	public float timeBetweenHealthDecayIncrease = 10f;
 
 	public int othersCount = 0;
 
+	[Header("Ship Height")]
 	public float startingShipHeight = 3000f;
 	public float shipHeight;
 
+	[Header("Other Settings")]
+	public OthersSpawn othersSpawner;
+	public float startingSpawnTimeOther = 5f;
+	public float SpawnTimeOther { get; set; }
 	public float startingDecreaseByOthers = 5f;
 	public float DecreasingHeightByOthers { get; set; }
 
 	public float startingRegen = 15f;
 	public float Regen { get; set; }
 
+	[Header("Stun Settings")]
 	public float startingStunInterval = 20f;
 	public float StunInterval { get; set; }
 	public GameObject VCFollow;
@@ -85,8 +89,23 @@ public class GameManager : MonoBehaviour {
 			Regen = startingRegen;
 			StunInterval = startingStunInterval;
 
+			StartCoroutine(IncreaseDecayFactor());
 			score = 0;
 		}
+	}
+
+	IEnumerator IncreaseDecayFactor()
+	{
+		Health.decayFactor = 1f;
+		yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
+
+		while(enabled)
+		{
+			Health.decayFactor += 0.2f;
+			yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
+		}
+
+		yield break;
 	}
 
 	public void NewGame()

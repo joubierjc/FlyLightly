@@ -10,7 +10,8 @@ public class Health : MonoBehaviour {
 	public float value;
 	[Range(0f, 1f)]
 	public float restorePercent = 0.75f;
-	float randomDecayFactor;
+	[HideInInspector]
+	public static float decayFactor;
 	public UnityEvent onDeath;
 
 	private bool isDead = false;
@@ -21,7 +22,7 @@ public class Health : MonoBehaviour {
 	private void Start()
 	{
 		value = maxValue;
-		randomDecayFactor = Random.Range(1, 3);
+		decayFactor = 1f;
 	}
 
 	private void Update() {
@@ -31,7 +32,9 @@ public class Health : MonoBehaviour {
 			return;
 		}
 
-		value -= Time.deltaTime * randomDecayFactor * GameManager.Instance.DecayingHealthMultiplicator;
+		
+
+		value -= Time.deltaTime * decayFactor * GameManager.Instance.DecayingHealthMultiplicator;
 		healthHUD.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0f, maxValue, value));
 
 		if (value < 0)
@@ -53,6 +56,7 @@ public class Health : MonoBehaviour {
 			onDeath.Invoke();
 		}
 	}
+
 
 	public void RestoreHealth() {
 		value = Mathf.Lerp(value, maxValue, restorePercent);
