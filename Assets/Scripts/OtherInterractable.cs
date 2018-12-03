@@ -28,13 +28,17 @@ public class OtherInterractable : Interractable {
 		);
 
 		float rd = Random.value;
-		if(rd < 0.5f)
+		if(rd < 0.33f)
 		{
 			GameManager.Instance.audioManager.Play("death-other-1");
 		}
-		else
+		else if( rd < 0.66f)
 		{
 			GameManager.Instance.audioManager.Play("death-other-2");
+		}
+		else
+		{
+			GameManager.Instance.audioManager.Play("death-other-3");
 		}
 
 		Destroy(gameObject, deathDuration);

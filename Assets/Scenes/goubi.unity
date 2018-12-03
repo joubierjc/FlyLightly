@@ -612,6 +612,11 @@ MonoBehaviour:
   shipHeight: 0
   startingDecreaseByOthers: 5
   startingRegen: 15
+  startingStunInterval: 20
+  VCFollow: {fileID: 0}
+  VCFollowShake: {fileID: 0}
+  stunDuration: 1
+  screenShakeStrength: 10
   scoreText: {fileID: 1421812353}
   altitudeText: {fileID: 1527910359}
   startMenu: {fileID: 1681554760}
@@ -643,6 +648,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4189972771619386, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -674,6 +684,26 @@ Prefab:
     - target: {fileID: 4189972771619386, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[13].name
+      value: death-other-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: adf50688797e183478cb2bd881a8b122, type: 3}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[13].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[13].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
