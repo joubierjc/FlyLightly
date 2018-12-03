@@ -170,6 +170,8 @@ public class GameManager : MonoBehaviour {
 		shipHeight += (Regen - othersCount * DecreasingHeightByOthers) * Time.deltaTime;
 		altitudeText.text = ((int)shipHeight).ToString();
 		if (shipHeight < 0) {
+			audioManager.Stop("theme");
+			audioManager.Play("boom");
 			EndGame();
 		}
 	}

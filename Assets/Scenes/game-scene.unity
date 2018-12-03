@@ -1602,8 +1602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750.42, y: -145}
-  m_SizeDelta: {x: 369.24, y: 150}
+  m_AnchoredPosition: {x: -762.89996, y: -145}
+  m_SizeDelta: {x: 394.2, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764740072
 MonoBehaviour:
@@ -4136,8 +4136,8 @@ MonoBehaviour:
   startingSpawnTimeOther: 5
   startingDecayingHealthMultiplicator: 1
   othersCount: 0
-  startingShipHeight: 3000
-  shipHeight: 100
+  startingShipHeight: 10
+  shipHeight: 2500
   startingDecreaseByOthers: 5
   startingRegen: 15
   scoreText: {fileID: 2118591894}
