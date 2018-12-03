@@ -13,6 +13,7 @@ public enum ResourceType {
 public class FriendInterractable : Interractable {
 
 	public ResourceType ressource;
+	public float karmaGains = 200f;
 
 	public override void Interract() {
 		if (PlayerController.Instance.currentResource == ressource) {
@@ -31,9 +32,10 @@ public class FriendInterractable : Interractable {
 					GameManager.Instance.audioManager.Play("slurp-commander");
 					break;
 			}
+
 			GetComponent<Health>().RestoreHealth();
 			PlayerController.Instance.currentResource = ResourceType.None;
-			
+			GameManager.Instance.karma += karmaGains;
 		}
 	}
 }
