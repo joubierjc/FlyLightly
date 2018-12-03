@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526f7246ac4873248be17e0196d63546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxValue: 100
+  maxValue: 90
   value: 0
-  restorePercent: 0.75
+  restorePercent: 1
   onDeath:
     m_PersistentCalls:
       m_Calls:

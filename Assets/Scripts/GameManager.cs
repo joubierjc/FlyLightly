@@ -101,9 +101,8 @@ public class GameManager : MonoBehaviour {
 		Health.decayFactor = 1f;
 		yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
 
-		while(enabled)
+		while(enabled && Health.decayFactor <= 2f)
 		{
-			Debug.Log(Health.decayFactor);
 			Health.decayFactor += additionnalDecay;
 			yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
 		}

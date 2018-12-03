@@ -96,7 +96,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: reload-gunner
     clip: {fileID: 8300000, guid: dfd598080119f3643b2afda5a5d8da97, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

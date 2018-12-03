@@ -23,10 +23,7 @@ public class OthersSpawn : MonoBehaviour {
 	}
 
 	IEnumerator Spawn() {
-
-			SpawnOther();
-			yield return new WaitForSeconds(GameManager.Instance.SpawnTimeOther);
-
+		yield return new WaitForSeconds(GameManager.Instance.SpawnTimeOther);
 
 		while (enabled) {
 			SpawnOther();

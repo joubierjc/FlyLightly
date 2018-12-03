@@ -6,7 +6,7 @@ using DG.Tweening;
 public class OtherMovement : MonoBehaviour
 {
 
-	[SerializeField] float waitTime = 2f;
+	[SerializeField] Vector2 rangeWaitTime = new Vector2(2f, 3f);
 	[SerializeField] float timeToReachPosition = 1f;
 	[SerializeField] float stepRange = .5f;
 	[SerializeField] float leftLimit;
@@ -82,7 +82,7 @@ public class OtherMovement : MonoBehaviour
 				transform.localScale = new Vector3(-1f, 1f, 1f);
 			}
 
-
+			var waitTime = Random.Range(rangeWaitTime.x, rangeWaitTime.y);
 			yield return new WaitForSeconds(waitTime);
 		}
 
