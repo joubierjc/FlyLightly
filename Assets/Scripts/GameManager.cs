@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour {
 
@@ -56,12 +57,15 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] Text altitudeText;
 
 	[Header("Menus")]
+	public GameObject hud;
 	public GameObject startMenu;
 	public GameObject pauseMenu;
 	public GameObject endMenu;
 	public GameObject helpMenu;
 	public GameObject playHelpMenu;
 	public GameObject storyMenu;
+	public float transitionDuration = 1f;
+	public Ease curve;
 
 	[Header("End Settings")]
 	public GameObject congrats;
@@ -134,8 +138,19 @@ public class GameManager : MonoBehaviour {
 		}
 
 		Time.timeScale = 1f;
+
 		audioManager.Stop("menuStart");
-		PlaySound("theme");
+		DOTween.To(
+			() => VCFollow.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize,
+			x => VCFollow.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = x,
+			3f,
+			transitionDuration
+		).SetEase(curve)
+		.OnComplete(() => {
+			PlaySound("theme");
+			hud.SetActive(true);
+		});
+
 		startMenu.SetActive(false);
 		Init();
 		othersSpawner.StartSpawn();
@@ -163,6 +178,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void HelpButton(bool fromMenu = true) {
+		startMenu.SetActive(false);
+
 		PlayerPrefs.SetInt("help-seen", 1);
 		if (fromMenu) {
 			playHelpMenu.SetActive(false);
