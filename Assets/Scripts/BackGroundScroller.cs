@@ -18,7 +18,7 @@ public class BackGroundScroller : MonoBehaviour {
 	}
 
 	private void Update() {
-		float x = Mathf.Repeat(Time.time * scrollSpeed, 1);
+		float x = Mathf.Repeat(Time.unscaledTime * scrollSpeed, 1);
 		Vector2 offset = new Vector2(x, savedOffset.y);
 		rend.sharedMaterial.SetTextureOffset("_MainTex", offset);
 	}
