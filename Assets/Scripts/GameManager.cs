@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (sacrifice) {
-			karmaMotivationalText.text = karma >= 0f ? "You were to good for this world..." : "You chose to sacrifice yourself, but was it enough?";
+			karmaMotivationalText.text = karma >= 0f ? "You were to good for this world..." : "You chose to sacrifice yourself, but was it worth?";
 		}
 		else {
 			karmaMotivationalText.text = karma >= 0f ? "Choices had to be made, we won't judge you..." : "You've come this far, but at what cost?";
