@@ -1325,7 +1325,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4684514940135960, guid: 51ad6416be35b8a43bb5293b8e75718a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 3.815
       objectReference: {fileID: 0}
     - target: {fileID: 4684514940135960, guid: 51ad6416be35b8a43bb5293b8e75718a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1491,6 +1491,11 @@ Prefab:
       propertyPath: healthHUD
       value: 
       objectReference: {fileID: 1541146680}
+    - target: {fileID: 114724934106499526, guid: 3f02d4bbb524ec34b822c35135cd395c,
+        type: 2}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f02d4bbb524ec34b822c35135cd395c, type: 2}
   m_IsPrefabAsset: 0
@@ -4030,6 +4035,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 114760045817675922, guid: d21e0ec0758c6a247a403453f6f4430b,
+        type: 2}
+      propertyPath: startingInterractCoolDown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21e0ec0758c6a247a403453f6f4430b, type: 2}
   m_IsPrefabAsset: 0
@@ -4289,8 +4299,8 @@ MonoBehaviour:
   maxDistance: 5000
   multiplicator: 20
   startingDecayingHealthMultiplicator: 1
-  timeBetweenHealthDecayIncrease: 10
-  additionnalDecay: 0.2
+  timeBetweenHealthDecayIncrease: 15
+  additionnalDecay: 0.15
   othersCount: 0
   startingShipHeight: 2500
   shipHeight: 0
@@ -4302,7 +4312,6 @@ MonoBehaviour:
   VCFollow: {fileID: 766449043}
   VCFollowShake: {fileID: 1552113024}
   stunDuration: 2
-  screenShakeStrength: 3
   scoreText: {fileID: 2118591894}
   altitudeText: {fileID: 335454979}
   startMenu: {fileID: 1991082758}
@@ -4425,7 +4434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1991082759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4733,7 +4742,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4578989166689864, guid: ca3d51913a1090a4cb6f7ef4bf5a9b01, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 4.315
       objectReference: {fileID: 0}
     - target: {fileID: 4578989166689864, guid: ca3d51913a1090a4cb6f7ef4bf5a9b01, type: 2}
       propertyPath: m_LocalPosition.y

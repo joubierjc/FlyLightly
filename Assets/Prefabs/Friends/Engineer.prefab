@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxValue: 100
   value: 0
-  restorePercent: 0.75
+  restorePercent: 1
   onDeath:
     m_PersistentCalls:
       m_Calls:
