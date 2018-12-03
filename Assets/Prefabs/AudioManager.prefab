@@ -112,3 +112,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: suicide
+    clip: {fileID: 8300000, guid: 551d4dc210a21d2458c269e1f87c2fcd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
