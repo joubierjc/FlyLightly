@@ -226,7 +226,7 @@ public class GameManager : MonoBehaviour {
 				congrats.SetActive(true);
 			}
 
-			if (shipHeight < 50f) {
+			if (shipHeight < 100f) {
 				audioManager.Play("boom");
 			}
 
@@ -287,7 +287,7 @@ public class GameManager : MonoBehaviour {
 		score += Time.deltaTime * multiplicator;
 		scoreText.text = ((int)score).ToString();
 
-		if (shipHeight < 50f) {
+		if (shipHeight < 100f) {
 			audioManager.Stop("theme");
 			EndGame();
 		}
