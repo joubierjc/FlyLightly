@@ -120,6 +120,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndGame(bool sacrifice = false) {
+		audioManager.Stop("theme");
+
 		gameOver = true;
 		endMenu.SetActive(true);
 		Time.timeScale = 0f;
