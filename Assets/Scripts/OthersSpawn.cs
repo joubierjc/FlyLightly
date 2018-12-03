@@ -10,7 +10,7 @@ public class OthersSpawn : MonoBehaviour {
 	[Header("Limits")]
 	[SerializeField] Vector2 spawnLeft;
 	[SerializeField] Vector2 spawnRight;
-	
+
 
 	public void StartSpawn()
 	{
@@ -23,10 +23,10 @@ public class OthersSpawn : MonoBehaviour {
 	}
 
 	IEnumerator Spawn() {
-		
+
 			SpawnOther();
 			yield return new WaitForSeconds(GameManager.Instance.SpawnTimeOther);
-		
+
 
 		while (enabled) {
 			SpawnOther();
@@ -39,7 +39,7 @@ public class OthersSpawn : MonoBehaviour {
 	private void SpawnOther() {
 		float spawnPointX;
 
-		int otherIndex = Random.Range(0, othersPrefab.Length); 
+		int otherIndex = Random.Range(0, othersPrefab.Length);
 
 		spawnPointX = Random.Range(spawnLeft.x, spawnRight.x);
 		Rigidbody2D otherRB = Instantiate(othersPrefab[otherIndex], new Vector3(spawnPointX, spawnLeft.y), Quaternion.identity).GetComponent<Rigidbody2D>();

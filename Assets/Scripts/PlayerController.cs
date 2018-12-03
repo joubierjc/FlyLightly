@@ -108,10 +108,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		if (stunned) {
-			return;
-		}
-
 		// GET INPUTS
 		var horizontal = 0f;
 		horizontal += Input.GetKey(left) ? -1f : 0f;
@@ -134,18 +130,22 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		// APPLY MOVEMENT
-		rb2D.velocity = new Vector2(
-			Mathf.Lerp(rb2D.velocity.x, horizontal * MoveSpeed, 0.5f),
-			vertical
-		);
-
 		// UPDATE ANIMATOR PARAMS
 		prevHorizontalDirection = horizontal > 0f ? -1f : (horizontal < 0f ? 1f : prevHorizontalDirection);
 		transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
 		interractRenderer.transform.localScale = new Vector3(prevHorizontalDirection, 1f, 1f);
 		animator.SetFloat("MoveSpeed", Mathf.Abs(rb2D.velocity.x));
 		animator.SetBool("isGrounded", grounded);
+
+		// STUN CHECK
+		// APPLY MOVEMENT
+		if (stunned) {
+			return;
+		}
+		rb2D.velocity = new Vector2(
+			Mathf.Lerp(rb2D.velocity.x, horizontal * MoveSpeed, 0.5f),
+			vertical
+		);
 	}
 
 }

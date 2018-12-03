@@ -124,9 +124,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: death-other-3
+    clip: {fileID: 8300000, guid: adf50688797e183478cb2bd881a8b122, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: wind
     clip: {fileID: 8300000, guid: 72b851d65850ee249bb2c62b9eb64fce, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

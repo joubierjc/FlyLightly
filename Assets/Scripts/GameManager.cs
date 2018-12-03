@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour {
 	public float startingDecayingHealthMultiplicator = 1f;
 	public float DecayingHealthMultiplicator { get; set; }
 	public float timeBetweenHealthDecayIncrease = 10f;
+	public float additionnalDecay = 0.2f;
 
+	[HideInInspector]
 	public int othersCount = 0;
 
 	[Header("Ship Height")]
@@ -65,7 +67,7 @@ public class GameManager : MonoBehaviour {
 	[Header("Audio Manager")]
 	public AudioManager audioManager;
 
-	private float nextStun = 0f;
+	private float nextStun;
 	private float dummyValue;
 
 	void Awake()
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour {
 		}
 		PlaySound("menuStart");
 		Init();
+		nextStun = Time.time + StunInterval;
 	}
 
 	private void Init()
@@ -101,7 +104,8 @@ public class GameManager : MonoBehaviour {
 
 		while(enabled)
 		{
-			Health.decayFactor += 0.2f;
+			Debug.Log(Health.decayFactor);
+			Health.decayFactor += additionnalDecay;
 			yield return new WaitForSeconds(timeBetweenHealthDecayIncrease);
 		}
 
@@ -204,6 +208,7 @@ public class GameManager : MonoBehaviour {
 		if (nextStun < Time.time) {
 			nextStun = Time.time + StunInterval;
 
+			audioManager.Play("wind");
 			PlayerController.Instance.stunned = true;
 			VCFollowShake.SetActive(true);
 			VCFollow.SetActive(false);
