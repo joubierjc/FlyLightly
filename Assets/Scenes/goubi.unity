@@ -602,6 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   karma: 0
+  maxDistance: 10000
   multiplicator: 20
   othersSpawner: {fileID: 1229234710}
   startingSpawnTimeOther: 2
@@ -617,7 +618,11 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   endMenu: {fileID: 0}
   helpMenu: {fileID: 0}
-  audioManager: {fileID: 0}
+  congrats: {fileID: 0}
+  finalDistanceText: {fileID: 0}
+  karmaText: {fileID: 0}
+  karmaMotivationalText: {fileID: 0}
+  audioManager: {fileID: 1838927180}
 --- !u!4 &852113750
 Transform:
   m_ObjectHideFlags: 0
@@ -638,6 +643,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4189972771619386, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.170086
@@ -669,6 +679,26 @@ Prefab:
     - target: {fileID: 4189972771619386, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[10].name
+      value: suicide
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 551d4dc210a21d2458c269e1f87c2fcd, type: 3}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[10].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+        type: 2}
+      propertyPath: sounds.Array.data[10].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7d016e909d5c84fa91a0b8a6f87684, type: 2}
@@ -1176,6 +1206,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1838927180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114540229730238566, guid: 2f7d016e909d5c84fa91a0b8a6f87684,
+    type: 2}
+  m_PrefabInternal: {fileID: 872286322}
+  m_Script: {fileID: 11500000, guid: 4eeae245bfc663748b25508deaea5f0c, type: 3}
 --- !u!1001 &1941324692
 Prefab:
   m_ObjectHideFlags: 0
