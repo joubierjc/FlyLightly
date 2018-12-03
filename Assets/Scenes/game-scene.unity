@@ -4326,7 +4326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   karma: 0
-  maxDistance: 10000
+  maxDistance: 5000
   multiplicator: 20
   othersSpawner: {fileID: 700628807}
   startingSpawnTimeOther: 5
@@ -4458,7 +4458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1991082759
 RectTransform:
   m_ObjectHideFlags: 0

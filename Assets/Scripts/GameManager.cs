@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	public float score;
 	[HideInInspector]
 	public float karma;
-	public float maxDistance = 10000f;
+	public float maxDistance = 5000f;
 	public int multiplicator = 20;
 
 	public OthersSpawn othersSpawner;
@@ -148,6 +148,10 @@ public class GameManager : MonoBehaviour {
 
 		if (gameOver) {
 			return;
+		}
+
+		if (score >= maxDistance) {
+			EndGame();
 		}
 
 		if (Input.GetKeyDown(KeyCode.Escape))
